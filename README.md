@@ -1,58 +1,59 @@
-# Web App Webpack Template
+## HashMap JavaScript Implementation 🗺️
 
-This is a template for creating a web app using webpack.
+This project implements a HashMap data structure in JavaScript, providing functionalities for storing and retrieving key-value pairs with efficient access and collision handling.
 
-## Features
+### Project Goals
 
--   Bundles JavaScript, CSS, and other assets using webpack.
--   Supports hot module replacement for faster development.
--   Includes a development server for testing your app locally.
--   Optimizes and minifies your code for production.
+-   **Understanding HashMaps:** Implement a HashMap from scratch to gain a deeper understanding of its underlying principles and mechanisms.
+-   **Collision Handling:** Explore and implement collision resolution techniques, such as separate chaining, to handle hash collisions effectively.
+-   **Efficiency:** Design and optimize the HashMap implementation for efficient insertion, retrieval, and deletion of key-value pairs.
+-   **Flexibility:** Allow customization of the hash function and other parameters to adapt the HashMap to different use cases.
+-   **Data Structure Practice:** Gain practical experience in building and working with fundamental data structures in JavaScript.
 
-## Prerequisites
+### Features
 
-Before getting started, make sure you have the following installed on your machine:
+-   **Hashing:** Generates hash codes for keys using a customizable hash function.
+-   **Set:** Stores key-value pairs, handling collisions and resizing the underlying data structure as needed.
+-   **Get:** Retrieves values associated with given keys.
+-   **Has:** Checks if a key exists in the HashMap.
+-   **Remove:** Deletes key-value pairs based on keys.
+-   **Length:** Returns the number of stored key-value pairs.
+-   **Clear:** Removes all entries from the HashMap.
+-   **Keys:** Returns an array of all keys in the HashMap.
+-   **Values:** Returns an array of all values in the HashMap.
+-   **Entries:** Returns an array of key-value pairs.
 
--   Node.js
--   npm
+### Implementation Details
 
-## Getting Started
+-   The HashMap uses an array of buckets to store key-value pairs.
+-   Collision resolution is handled using separate chaining, where each bucket can hold multiple key-value pairs in a linked list.
+-   The project includes a basic hash function but allows for customization.
+-   The load factor is used to determine when to resize the underlying array to maintain efficiency.
 
-1. Clone this repository:
+### Usage
 
-    ```bash
-    git clone https://github.com/sebastianmsz/web-app-template.git
-    ```
+To use the HashMap, simply create a new instance and call its methods:
 
-2. Install the dependencies:
+```javascript
+const myHashMap = new HashMap();
 
-    ```bash
-    npm install
-    ```
+myHashMap.set('key1', 'value1');
+myHashMap.set('key2', 'value2');
 
-3. Start the development server:
+const value = myHashMap.get('key1'); // returns 'value1'
 
-    ```bash
-    npm start
-    ```
+const hasKey = myHashMap.has('key2'); // returns true
 
-    This will start the development server and open your app in the browser.
+myHashMap.remove('key1');
 
-4. Build your app for production:
+const size = myHashMap.length(); // returns 1
 
-    ```bash
-    npm run build
-    ```
-
-    This will create a `dist` directory with optimized and minified files ready for deployment.
-
-## Configuration
-
-You can customize the configuration of your app by modifying the `webpack.config.js` file.
+// ... and so on
+```
 
 ## Contributing
 
-Contributions are welcome! If you find any issues or have suggestions for improvements, please open an issue or submit a pull request.
+Contributions are welcome! Feel free to submit pull requests for bug fixes, improvements, or additional features.
 
 ## License
 
