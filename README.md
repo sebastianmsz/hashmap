@@ -1,54 +1,64 @@
-## HashMap JavaScript Implementation 🗺️
+# HashMap and HashSet JavaScript Implementation 🗺️
 
-This project implements a HashMap data structure in JavaScript, providing functionalities for storing and retrieving key-value pairs with efficient access and collision handling.
+This project implements both HashMap and HashSet data structures in JavaScript, providing efficient ways to store and manage collections of keys or key-value pairs.
 
-### Project Goals
+## Project Goals
 
--   **Understanding HashMaps:** Implement a HashMap from scratch to gain a deeper understanding of its underlying principles and mechanisms.
--   **Collision Handling:** Explore and implement collision resolution techniques, such as separate chaining, to handle hash collisions effectively.
--   **Efficiency:** Design and optimize the HashMap implementation for efficient insertion, retrieval, and deletion of key-value pairs.
--   **Flexibility:** Allow customization of the hash function and other parameters to adapt the HashMap to different use cases.
+-   **Understanding Data Structures:** Implement HashMap and HashSet from scratch to gain a deeper understanding of their underlying principles and mechanisms.
+-   **Collision Handling:** Explore and implement collision resolution techniques to handle hash collisions effectively.
+-   **Efficiency:** Design and optimize the implementations for efficient insertion, retrieval, and deletion of elements.
+-   **Flexibility:** Allow customization of the hash function and other parameters to adapt the data structures to different use cases.
 -   **Data Structure Practice:** Gain practical experience in building and working with fundamental data structures in JavaScript.
 
-### Features
+## Usage
 
--   **Hashing:** Generates hash codes for keys using a customizable hash function.
--   **Set:** Stores key-value pairs, handling collisions and resizing the underlying data structure as needed.
--   **Get:** Retrieves values associated with given keys.
--   **Has:** Checks if a key exists in the HashMap.
--   **Remove:** Deletes key-value pairs based on keys.
--   **Length:** Returns the number of stored key-value pairs.
--   **Clear:** Removes all entries from the HashMap.
--   **Keys:** Returns an array of all keys in the HashMap.
--   **Values:** Returns an array of all values in the HashMap.
--   **Entries:** Returns an array of key-value pairs.
-
-### Implementation Details
-
--   The HashMap uses an array of buckets to store key-value pairs.
--   Collision resolution is handled using separate chaining, where each bucket can hold multiple key-value pairs in a linked list.
--   The project includes a basic hash function but allows for customization.
--   The load factor is used to determine when to resize the underlying array to maintain efficiency.
-
-### Usage
-
-To use the HashMap, simply create a new instance and call its methods:
+1. import the HashMap and HashSet classes from the main module.
 
 ```javascript
-const myHashMap = new HashMap();
+import { HashMap, HashSet } from './main';
+```
 
-myHashMap.set('key1', 'value1');
-myHashMap.set('key2', 'value2');
+2. Create instances and use the methods:
 
-const value = myHashMap.get('key1'); // returns 'value1'
+```javascript
+// Create a new HashMap
+const myMap = new HashMap();
 
-const hasKey = myHashMap.has('key2'); // returns true
+// Add key-value pairs
+myMap.set('key1', 'value1');
+myMap.set('key2', 'value2');
 
-myHashMap.remove('key1');
+// Get a value
+const value = myMap.get('key1'); // value = 'value1'
 
-const size = myHashMap.length(); // returns 1
+// Create a new HashSet
+const mySet = new HashSet();
 
-// ... and so on
+// Add elements
+mySet.add('element1');
+mySet.add('element2');
+
+// Check if an element exists
+const exists = mySet.has('element1'); // exists = true
+```
+
+Complete Example:
+
+```javascript
+import { HashMap, HashSet } from './main';
+
+// Using HashMap
+const userMap = new HashMap();
+userMap.set('user123', { name: 'John', age: 30 });
+const userData = userMap.get('user123');
+console.log(userData.name); // Output: John
+
+// Using HashSet
+const allowedRoles = new HashSet();
+allowedRoles.add('admin');
+allowedRoles.add('user');
+const isAdmin = allowedRoles.has('admin');
+console.log(isAdmin); // Output: true
 ```
 
 ## Contributing
